@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CallMonitor</string>
+    <string name="server_running">Server running</string>
+    <string name="ip_port">IP: %1$s PORT: %2$s</string>
+    <string name="stop_server">Stop server</string>
+    <string name="grant_permissions">Grant permissions</string>
+</resources>
