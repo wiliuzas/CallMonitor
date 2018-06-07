@@ -1,0 +1,63 @@
+FORMAT: 1A
+
+
+# CallMonitor
+
+CallMonitor is a simple API allowing to view call data.
+
+{IP} - get IP from application
+
+## Requests
+
+### List All Services [GET] [http://{IP}:12345]
+
++ Response 200 (application/json)
+
+        
+        {
+            "start": "2018-05-02T23:00:00+00:00",
+                "services": [
+                {
+                    "name": "status",
+                    "uri": "http://192.168.1.100:12345/status"
+                },
+                {
+                    "name": "log",
+                    "uri": "http://192.168.1.100:12345/log"
+                }
+            ]
+        }
+      
+### Get current call status [GET] [http://{IP}:12345/status]
+
++ Response 200 (application/json)
+
+        
+        {
+            "ongoing": true,
+            "number": "+12025550108",
+            "name": "John Doe"
+        }
+ 
+      
+### Get previous calls logs [GET] [http://{IP}:12345/log]
+
++ Response 200 (application/json)
+
+
+        [
+            {
+                "beginning": "2018-05-02T23:00:00+00:00",
+                "duration": "498",
+                "number": "+12025550203",
+                "name": "Jane Doe",
+                "timesQueried": 5
+            },
+            {
+                "beginning": "2018-05-01T09:00:00+00:00",
+                "duration": "721",
+                "number": "+12025550108",
+                "name": "John Doe",
+                "timesQueried": 0
+            }
+        ]
